@@ -13,12 +13,6 @@
 </template>
 <script>
 /* import DropSelect from 'views/form/drop-select/index.vue' */
-import Vue from 'vue'
-import { Button, Form, Field, Sidebar, SidebarItem } from 'vant'
-
-Vue.use(Sidebar)
-Vue.use(SidebarItem)
-Vue.use(Button).use(Form).use(Field)
 
 export default {
   name: 'From',
@@ -28,9 +22,11 @@ export default {
   beforeRouteEnter (to, from, next) {
     // 每次刷新 更新nav选中状态 或者通过vuex
     // 个人比较建议 vuex 的状态管理方式
+    console.log(to)
+    console.log(from)
     next(vm => {
       // 通过 `vm` 访问组件实例
-      if (vm.activeKey === 0) {
+      if (vm.activeKey === 0 && to.path !== '/form/drop-select') { // 如果本来导航就是到 '/form/drop-select'  再导航到这个地址会报错
         vm.$router.push('/form/drop-select')
       }
     })

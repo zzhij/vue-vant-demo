@@ -27,10 +27,6 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { List, Search, Field, Cell, CellGroup } from 'vant'
-
-Vue.use(List).use(Search).use(Field).use(Cell).use(CellGroup)
 export default {
   name: 'Droplist',
   data () {
