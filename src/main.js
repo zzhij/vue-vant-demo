@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+/* import './plugins/InlineHeadPlugin/meta' */
 
 import './assets/css/reset.css'
 import './assets/css/common.css'
@@ -34,8 +35,11 @@ import {
   AddressEdit,
   Popup,
   NumberKeyboard,
-  Toast
+  Toast,
+  Sidebar,
+  SidebarItem
 } from 'vant'
+/* import 'vant/lib/index.css' */
 
 Vue.use(Button)
   .use(VanImage)
@@ -55,6 +59,8 @@ Vue.use(Button)
   .use(AddressEdit)
   .use(Popup)
   .use(NumberKeyboard)
+  .use(Sidebar)
+  .use(SidebarItem)
 
 Vue.use(Toast)
 

@@ -1,6 +1,6 @@
 <template>
   <div class="droplist-wrap">
-    <van-field
+    <!-- <van-field
       v-model="value"
       placeholder="请选择类名"
       right-icon="arrow-down"
@@ -22,7 +22,8 @@
           @click="clickcell(item)"
         />
       </van-list>
-    </div>
+    </div> -->
+    <div class="blog"></div>
   </div>
 </template>
 
@@ -78,5 +79,9 @@ export default {
     background: #ccc;
     position: relative;
   }
+}
+.blog {
+  width: 375px; height: 100px;
+  background: #000;
 }
 </style>

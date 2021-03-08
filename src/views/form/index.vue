@@ -15,7 +15,7 @@
 /* import DropSelect from 'views/form/drop-select/index.vue' */
 
 export default {
-  name: 'From',
+  name: 'Froms',
   components: {
     /* DropSelect */
   },

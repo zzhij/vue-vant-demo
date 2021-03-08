@@ -4,6 +4,10 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const CompressionPlugin = require('compression-webpack-plugin')// 引入gzip压缩插件
 const SkeletonWebpackPlugin = require('vue-skeleton-webpack-plugin')
 const VConsolePlugin = require('vconsole-webpack-plugin')
+const autoprefixer = require('autoprefixer');
+const pxtoviewport = require('postcss-px-to-viewport');
+const pxtorem = require('postcss-pxtorem');
+const InlineHeadPlugin = require('./src/plugins/InlineHeadPlugin/inlineHead') //自定义插件，将meta文件嵌入html头部
 
 function resolve (dir) {
   return path.join(__dirname, dir)
@@ -38,15 +42,7 @@ module.exports = {
     extract: true,
     sourceMap: true,
     // css预设器配置项
-    loaderOptions: {
-      postcss: {
-        plugins: [
-          require('postcss-px2rem')({
-            remUnit: 100
-          })
-        ]
-      }
-    },
+    
     // 启用 CSS modules for all css / pre-processor files.
     // modules: false
     // 启用 CSS modules for all css / pre-processor files. vue-cli4将 modules 换成 requireModuleExtension
@@ -166,6 +162,7 @@ module.exports = {
         enable: envType
       })
     ]
+    config.plugins.push(new InlineHeadPlugin())
     config.plugins = [...config.plugins, ...pluginsDev]
 
     // console.log('webpack配置')
